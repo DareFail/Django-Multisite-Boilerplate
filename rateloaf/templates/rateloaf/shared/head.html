@@ -10,7 +10,7 @@
       content="https://{{ HOST }}{% static 'favicons/android-chrome-192x192.png'|local_static:APP_DIRECTORY %}" />
 <meta property="og:description" content="{{ HOST }}" />
 <meta property="og:site_name" content="{{ HOST }}" />
-<link rel="canonical" href="https://{{ HOST }}">
+<link rel="canonical" href="{{ HTTP }}{{ HOST }}{{ request.get_full_path }}">
 {% include "./favicon.html" %}
 {% if captcha %}<script src="https://www.google.com/recaptcha/enterprise.js?render={{ captcha }}"></script>{% endif %}
 {% if SMARKETMAN_LINK %}
