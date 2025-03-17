@@ -342,17 +342,26 @@ else:
 ROBOFLOW_API_KEY = os.environ.get("ROBOFLOW_API_KEY", "")
 
 LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "handlers": {
-        "null": {
-            "class": "logging.NullHandler",
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+        },
+        'null': {
+            'class': 'logging.NullHandler',
         },
     },
-    "loggers": {
-        "django.security.DisallowedHost": {
-            "handlers": ["null"],
-            "propagate": False,
+    'loggers': {
+        'django.security.DisallowedHost': {
+            'handlers': ['null'],
+            'propagate': False,
+        },
+        'django': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
         },
     },
 }
