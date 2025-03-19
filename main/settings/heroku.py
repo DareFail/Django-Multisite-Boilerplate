@@ -1,4 +1,4 @@
-from .base import *
+from .base import *  # noqa: F401
 
 import django_heroku
 import os
