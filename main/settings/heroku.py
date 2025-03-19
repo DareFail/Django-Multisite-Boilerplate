@@ -24,7 +24,9 @@ CSRF_COOKIE_SECURE = True
 
 USE_HTTPS_IN_ABSOLUTE_URLS = True
 
-ALLOWED_HOSTS = VIRTUAL_DOMAINS  # noqa: F405
+# On Heroku it can be *
+# ALLOWED_HOSTS = VIRTUAL_DOMAINS  # noqa: F405
+ALLOWED_HOSTS = ["*"]
 
 CACHES = {
     "default": {

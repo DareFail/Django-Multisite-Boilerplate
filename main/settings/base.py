@@ -280,8 +280,7 @@ else:
 
 SMARKETMAN_LINK = os.getenv("SMARKETMAN_LINK", "False") == "True"
 
-if LOCAL_DEV and not DEBUG:
-    ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*"]
 
 VIRTUAL_APPS = []
 VIRTUAL_DOMAINS = []
