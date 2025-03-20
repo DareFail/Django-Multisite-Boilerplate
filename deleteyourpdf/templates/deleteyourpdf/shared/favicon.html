@@ -1,22 +1,18 @@
 {% load static %}
 {% load static_tags %}
 {# see https://realfavicongenerator.net #}
+<link rel="icon"
+      type="image/png"
+      href="{% static 'favicons/favicon-96x96.png'|local_static:APP_DIRECTORY %}"
+      sizes="96x96" />
+<link rel="icon"
+      type="image/svg+xml"
+      href="{% static 'favicons/favicon.svg'|local_static:APP_DIRECTORY %}" />
+<link rel="shortcut icon"
+      href="{% static 'favicons/favicon.ico'|local_static:APP_DIRECTORY %}" />
 <link rel="apple-touch-icon"
       sizes="180x180"
-      href="{% static 'favicons/apple-touch-icon.png'|local_static:APP_DIRECTORY %}">
-<link rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="{% static 'favicons/favicon-32x32.png'|local_static:APP_DIRECTORY %}">
-<link rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="{% static 'favicons/favicon-16x16.png'|local_static:APP_DIRECTORY %}">
+      href="{% static 'favicons/apple-touch-icon.png'|local_static:APP_DIRECTORY %}" />
+<meta name="apple-mobile-web-app-title" content="Darefail" />
 <link rel="manifest"
-      href="{% static 'favicons/site.webmanifest'|local_static:APP_DIRECTORY %}">
-<link rel="shortcut icon"
-      href="{% static 'favicons/favicon.ico'|local_static:APP_DIRECTORY %}">
-<meta name="msapplication-TileColor" content="#603cba">
-<meta name="msapplication-config"
-      content="{% static 'favicons/browserconfig.xml'|local_static:APP_DIRECTORY %}">
-<meta name="theme-color" content="#ffffff">
+      href="{% static 'favicons/site.webmanifest'|local_static:APP_DIRECTORY %}" />
