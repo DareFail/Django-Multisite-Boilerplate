@@ -18,7 +18,7 @@
                     {{ form.non_field_errors }}
                     {% render_text_input form.email %}
                     {% render_text_input form.password1 %}
-                    {% render_text_input form.username %}
+                    {% render_text_input form.name %}
                     {% if project_settings.ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE %}
                         {% render_text_input form.password2 %}
                     {% endif %}
