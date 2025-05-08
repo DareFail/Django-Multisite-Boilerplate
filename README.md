@@ -5,21 +5,8 @@ Welcome to Django Multisite Boilerplate! A free template to run scalable, cheap 
 Hosted on Heroku for a live demo here: [https://django.darefail.com
 ](https://django.darefail.com)
 
-## Live Demos
+
 **A single VPS running this codebase has so far proven to handle over 10,000 concurrent users, 1,000,000 views and 50 websites without issue.**
-
-**[RateLoaf.com](https://rateloaf.com)** - 
-Rate how well cats sit like bread with OpenAI GPT4v, Roboflow workflows, and images uploaded to Amazon S3 in a celery task.
-
-**[HandLand.lol](https://handland.lol)** - 
-Create live AI multiplayer games using WebRTC, Websockets, and Roboflow for AI vision models.
-
-**[pdf.darefail.com](https://pdf.darefail.com)** -
-Interactive Demo for using the Delete Your PDF library.
-
-**[subwayart.darefail.com](https://subwayart.darefail.com)** -
-Interactive Demo for using the Delete Your PDF library.
-
 
 ## Other Repos
 
@@ -36,7 +23,7 @@ Interactive Demo for using the Delete Your PDF library.
 - **Backend**: Django, Docker, Postgres Database, Redis caching, Celery background tasks, Celery Beat scheduled tasks Django
 - **Preconfigured Libraries**: Django Allauth authentication, AWS storage, Slack alerts and slack bots, Twilio texting, Sendgrid Email, Captcha spam detection, Sesame Magic Link passwordless signin, Hijack user impersonation
 - **Multiplayer**: WebRTC and native Websockets with daphne and channels
-- **AI**: Integrated with Roboflow (sponsored project), includes Stable diffusion, Flux, Roboflow installed.
+- **AI**: Includes Stable diffusion, Flux, and Roboflow installed.
 - **Scalable and Cheap to Host**: Run hundreds of websites and millions of users into a heroku, digital ocean, or a VPS of your choice
 
 ## Getting Started
@@ -476,9 +463,9 @@ AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 ```
 
 
-## Acknowledgements
+## Past Sponsors
 
-Thanks to Roboflow for sponsoring this project. Get your free API key at: [Roboflow](https://roboflow.com/)
+Thanks to Roboflow for sponsoring this project.
 
 ## License
 

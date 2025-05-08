@@ -4,7 +4,6 @@ celery[redis]
 channels
 channels-redis
 daphne
-delete-your-pdf
 Django
 django-allauth
 django-anymail[mailgun]
