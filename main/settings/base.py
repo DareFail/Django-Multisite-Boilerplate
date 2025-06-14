@@ -209,7 +209,7 @@ SESAME_MAX_AGE = 2 * 60 * 60  # 2 hours
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "America/New_York"
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -259,7 +259,7 @@ SITE_ID = 1
 CELERY_BROKER_URL = "redis://localhost:6379/0"
 CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
 CELERY_ENABLE_UTC = False
-CELERY_TIMEZONE = "America/New_York"
+CELERY_TIMEZONE = "UTC"
 
 SLACK_SIGNING_SECRET = os.getenv("SLACK_SIGNING_SECRET", "")
 SLACK_CLIENT_ID = os.getenv("SLACK_CLIENT_ID", "")
