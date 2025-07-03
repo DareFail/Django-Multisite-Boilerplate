@@ -3,6 +3,7 @@ from allauth.account import app_settings
 from allauth.account.models import EmailAddress
 from sesame.utils import get_token, get_user
 
+from django.shortcuts import redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.http import HttpResponseRedirect, HttpResponse
@@ -103,6 +104,10 @@ def auth_magic_link(request, sesame):
         return HttpResponseRedirect(reverse("home"))
     login(request, user, backend='django.contrib.auth.backends.ModelBackend')
     user.save()
+    
+    next_url = request.GET.get('next', False)
+    if next_url:
+        return redirect(next_url)
     return HttpResponseRedirect(reverse("home"))
 
 
