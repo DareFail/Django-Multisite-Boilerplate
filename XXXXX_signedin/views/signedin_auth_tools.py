@@ -39,6 +39,15 @@ def change_email(request):
         form = CustomUserChangeForm(request.POST, instance=request.user)
         if form.is_valid():
             user = form.save(commit=False)
+            if CustomUser.objects.filter(email=user.email).exists:
+                messages.error(request, "You cannot change your email.")
+                return render_with_appname(
+                    request,
+                    "account/change_email.html",
+                    {
+                        "form": form,
+                    },
+                )
             user_before_update = CustomUser.objects.get(pk=user.pk)
             need_to_confirm_email = (
                 user_before_update.email != user.email
