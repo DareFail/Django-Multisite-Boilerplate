@@ -148,6 +148,8 @@ DJANGO_SETTINGS_MODULE=main.settings.heroku
 7. Set the heroku settings
 ```
 heroku stack:set container
+heroku pg:connection-pooling:attach DATABASE_URL --as DATABASE_CONNECTION_POOL
+heroku features:enable preboot -a withfriends-prod 
 heroku run python manage.py createsuperuser
 ```
 
