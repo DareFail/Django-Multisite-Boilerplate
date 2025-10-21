@@ -2,8 +2,23 @@ from .base import *  # noqa: F401
 
 import django_heroku
 import os
+import dj_database_url
 
 django_heroku.settings(locals())
+
+DATABASE_URL = os.environ.get("DATABASE_CONNECTION_POOL_URL", os.environ.get("DATABASE_URL"))
+
+DATABASES = {
+    "default": dj_database_url.parse(
+        DATABASE_URL,
+        conn_max_age=60,     # or a higher value, 'None' for no expiration
+        ssl_require=True
+    )
+}
+
+# Ensure DISABLE_SERVER_SIDE_CURSORS is always set to True
+DATABASES['default'].setdefault('OPTIONS', {})
+DATABASES['default']['OPTIONS']['DISABLE_SERVER_SIDE_CURSORS'] = True
 
 if os.environ.get("REDIS_URL"):
     CELERY_BROKER_URL = (
