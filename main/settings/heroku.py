@@ -17,8 +17,7 @@ DATABASES = {
 }
 
 # Ensure DISABLE_SERVER_SIDE_CURSORS is always set to True
-DATABASES['default'].setdefault('OPTIONS', {})
-DATABASES['default']['OPTIONS']['DISABLE_SERVER_SIDE_CURSORS'] = True
+DATABASES["default"]["DISABLE_SERVER_SIDE_CURSORS"] = True
 
 if os.environ.get("REDIS_URL"):
     CELERY_BROKER_URL = (
